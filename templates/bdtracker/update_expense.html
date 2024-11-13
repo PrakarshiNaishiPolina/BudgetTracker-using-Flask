@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static',filename='bdupdate.css')}}">
+    <title>Update Expense</title>
+</head>
+<body>
+    <h1> Update Expense</h1>
+    <form method="POST">
+
+        <label for="cat">Category</label>
+        <input type="text" name="cat" value="{{expense.category}}" required><br>
+
+        <label for="desc">Description</label>
+        <input type="text" name="desc" value="{{expense.description}}"><br>
+
+        <label for="amt">Amount</label>
+        <input type="number" name="amt" step="0.01" value="{{ expense.amount}}" required><br>
+
+        <label for="dat">Date:</label>
+        <input type="date" name="dat" value="{{expense.date}}" required><br>
+
+        <input type="submit" value="Update Expense">
+    </form>
+</body>
+</html>

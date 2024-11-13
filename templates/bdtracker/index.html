@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static',filename='bdindex.css') }}">
+    <title>Budget Tracker</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Budget Tracker</h1>
+        <p>Come, check and calculate your budget</p>
+        <a href="{{ url_for('add_expense')}}" class="add">Add Expense</a>
+        <h2>Total Spent: ${{ total_amount }}</h2>
+
+        {% for expense in expenses %}
+        <div class="expense-item">
+            <div class="expense-info">
+                <span class="expense-index">{{ loop.index }}.</span>
+                <span class="label">Category:</span> {{ expense.category }}
+            </div>
+            <div class="expense-info">
+                <span class="label">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Description:</span> {{ expense.description }}
+            </div>
+            <div class="expense-info">
+                <span class="label">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Amount:&</span> ${{ expense.amount }}
+            </div>
+            <div class="expense-info">
+                <span class="label">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Date:</span> {{ expense.date }}
+            </div>
+            <br>
+            <a href="{{ url_for('delete_expense',id=expense.id) }}" class="delete">Delete</a>
+            <a href="{{ url_for('update_expense',id=expense.id) }}" class="update">Update</a>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
