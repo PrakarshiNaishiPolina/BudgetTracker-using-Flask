@@ -24,9 +24,21 @@ The Budget Tracker is a Flask-based web application that helps users track their
 ### Prerequisites
 - Python 3.x
 
+### Project Structure
 
-### Steps
-1. **Clone the Repository**:
-   ```bash
-   git clone <repository_url>
-   cd <repository_folder>
+project/
+│
+├── budget.py                 # Main application file
+├── dbcreate.py               # Script to initialize the database
+├── templates/
+│   ├── bdtracker/
+│       ├── add_expense.html  # Form to add a new expense
+│       ├── index.html        # Homepage displaying expenses
+│       ├── update_expense.html # Form to update an expense
+│
+├── static/
+│   ├── bdadd.css             # Styles for Add Expense page
+│   ├── bdindex.css           # Styles for Index page
+│   ├── bdupdate.css          # Styles for Update Expense page
+│
+└── tracker.db                # SQLite database file (auto-generated)
