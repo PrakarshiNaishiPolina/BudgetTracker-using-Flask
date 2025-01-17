@@ -23,7 +23,7 @@ The Budget Tracker is a Flask-based web application that helps users track their
 ## Setup and Installation
 ### Prerequisites
 - Python 3.x
-- Virtual environment (optional but recommended)
+
 
 ### Steps
 1. **Clone the Repository**:
